@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_odoo__simple__api_odoo__simple__api,odoo__simple__api.odoo__simple__api,model_odoo__simple__api_odoo__simple__api,,1,0,0,0
