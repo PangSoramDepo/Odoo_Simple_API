@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Odoo_Simple_API",
+    'name': "Odoo Simple API",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        This module is create for CRUD API""",
 
     'description': """
-        Long description of module's purpose
+        This module is very simple CRUD API that i create for all Odoo developer 
+        I Hope it helpful to all of you
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "PANG-SORAM-DEPO",
+    'website': "https://github.com/PangSoramDepo",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
