@@ -141,7 +141,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8069/api/res.partner/limit/5",
+					"raw": "http://localhost:8069/api/res.partner/limit/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -151,7 +151,7 @@
 						"api",
 						"res.partner",
 						"limit",
-						"5"
+						"2"
 					]
 				}
 			},
@@ -172,7 +172,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8069/api/library.book/delete/3",
+					"raw": "http://localhost:8069/api/library.book/delete/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -182,7 +182,7 @@
 						"api",
 						"library.book",
 						"delete",
-						"3"
+						"5"
 					]
 				}
 			},
@@ -195,7 +195,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"params\" : {\r\n       \"custom_name\"    :   \"PoPoMaster\",\r\n       \"name\"           :   \"PoPo New\",\r\n       \"age_days\"       :   2\r\n    }\r\n}",
+					"raw": "{\r\n    \"params\" : {\r\n       \"custom_name\"    :   \"PoPoMaster-Update\",\r\n       \"name\"           :   \"PoPo New-Update\",\r\n       \"age_days\"       :   2\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -203,7 +203,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8069/api/library.book/update/1?ler=me",
+					"raw": "http://localhost:8069/api/library.book/update/6",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -213,13 +213,7 @@
 						"api",
 						"library.book",
 						"update",
-						"1"
-					],
-					"query": [
-						{
-							"key": "ler",
-							"value": "me"
-						}
+						"6"
 					]
 				}
 			},

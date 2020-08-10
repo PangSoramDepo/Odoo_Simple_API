@@ -10,6 +10,7 @@ from operator import attrgetter
 from odoo.http import request
 from odoo import http
 
+# TODO : Add your Model and Field you want to search here :
 models={
     'res.partner'   :   ['id','name','display_name'],
     'library.book'  :   ['id','name','custom_name','age_days','date_release']
@@ -19,11 +20,13 @@ _logger=logging.getLogger(__name__)
 
 g_take=5
 g_condition=[]
+g_model=None
 
 class Utils:
     def __init__(self, model):
         self.model=model
         self._restore()
+        self._set_g_modle()
 
     def all(self):
         return self._private_all()
@@ -42,20 +45,20 @@ class Utils:
         return self._private_all(g_take)
 
     def insert(self,kw):
-        return request.env[self.model].create(kw)
+        return g_model.create(kw)
     
     def delete(self):
-        result=request.env[self.model].search(g_condition).unlink()
+        result=g_model.search(g_condition).unlink()
         return result
 
     def update(self,kw):
-        model=request.env[self.model].search(g_condition)
+        model=g_model.search(g_condition)
         for x in model:
             result=model.update(kw)
         return result
 
     def _private_all(self,limit=None):
-        raw_data=request.env[self.model].search(g_condition) if limit is None else request.env[self.model].search(g_condition,limit=limit)
+        raw_data=g_model.search(g_condition) if limit is None else g_model.search(g_condition,limit=limit)
         data=[]
         for x in raw_data:
             data.append(self._get_key_value(x,*models[self.model]))
@@ -66,6 +69,10 @@ class Utils:
         for x in arg:
             data[x]=attrgetter(x)(obj)
         return data
+
+    def _set_g_modle(self):
+        global g_model
+        g_model=request.env[self.model]
 
     def _restore(self):
         global g_take
